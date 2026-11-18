@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula — Plataforma SP24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="container topo-linha">
+      <a href="index.html" class="logo">&lt;SP24/&gt;</a>
+      <a href="index.html" class="voltar">← Todas as aulas</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="cabeca-aula">
+      <p class="eyebrow" id="eyebrow"></p>
+      <h1 id="titulo"></h1>
+      <p class="sub" id="resumo"></p>
+    </section>
+
+    <section class="bloco">
+      <h2>Vídeo</h2>
+      <div id="video" class="video"></div>
+    </section>
+
+    <section class="bloco">
+      <h2>Slides</h2>
+      <div id="slides"></div>
+    </section>
+
+    <section class="bloco">
+      <h2>Material da aula</h2>
+      <div id="material" class="material"></div>
+    </section>
+
+    <section class="bloco">
+      <h2>Dúvidas</h2>
+      <div id="caixa-duvidas"></div>
+    </section>
+
+    <nav class="anterior-proxima" id="navegacao"></nav>
+  </main>
+
+  <footer class="rodape"><div class="container">Turma SP24 · Prof. Leandro</div></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/aulas.js"></script>
+  <script src="js/duvidas.js"></script>
+  <script src="js/aula.js"></script>
+</body>
+</html>

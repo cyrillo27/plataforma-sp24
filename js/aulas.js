@@ -1,0 +1,253 @@
+// =============================================================
+// MATERIAL DO CURSO — turma SP24
+// Este arquivo é a fonte de tudo: a página lê daqui e o
+// ferramentas/gerar-seed.js gera o supabase/seed.sql a partir dele.
+// Para adicionar o vídeo do YouTube de uma aula, preencha "youtube"
+// com o link (ex.: "https://youtu.be/XXXXXXXXXXX").
+// Mais de um vídeo na mesma aula: use uma lista, ["link1", "link2"].
+// =============================================================
+
+const AULAS = [
+  {
+    id: "extra-resumo-modulo1", numero: 0, modulo: "Figma",
+    titulo: "Resumo do Módulo 1: fundamentos da web e Figma",
+    resumo: "Internet, web, cliente e servidor, e o planejamento no Figma.",
+    conteudo: "Resumo do Módulo 1. A internet é a rede que liga os computadores do mundo; a web é o conjunto de sites que usamos por cima dela. Cliente é quem pede (o navegador) e servidor é quem guarda o site e responde. A URL é o endereço do site; o DNS traduz o nome (como google.com) para o endereço do servidor; o HTTP (ou HTTPS, seguro) é a forma como o navegador e o servidor conversam. O DevTools (F12) mostra o código e os erros da página. Front-end é a parte que o usuário vê (HTML, CSS e JavaScript); back-end é a parte do servidor e dos dados. Antes de programar, planejamos no Figma: moodboard com referências, frame da tela, tipografia (no máximo duas fontes, com hierarquia de tamanhos) e paleta de cores com bom contraste.",
+    youtube: "https://www.youtube.com/watch?v=CYPYadA9uRQ", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/GurwYnnWEo45YwFUCFJ7Gu"
+  },
+  {
+    id: "aula-02", numero: 2, modulo: "Figma",
+    titulo: "Conhecendo o Figma",
+    resumo: "O que é o Figma, a tela de trabalho e o primeiro frame.",
+    conteudo: "O Figma é uma ferramenta online para desenhar telas de sites e aplicativos antes de programar. Ele roda no navegador e o arquivo fica salvo na nuvem. Partes da tela: barra de ferramentas em cima, camadas (layers) à esquerda, canvas no meio e propriedades (design) à direita. O Frame (atalho F) é a moldura da tela: escolha um tamanho pronto, como Desktop ou iPhone. Dentro do frame usamos retângulo (R), texto (T), elipse (O) e imagens. Camadas podem ser agrupadas com Ctrl + G. O moodboard é um painel de referências (cores, fontes, imagens) que mostra o clima do site antes de desenhar. Primeiro planejamos no Figma, depois transformamos em HTML e CSS.",
+    youtube: ["https://www.youtube.com/watch?v=YA76UC-OovA", "https://www.youtube.com/watch?v=A_Ly0xYn4jo"], video: "", pdf: "",
+    slides: "https://claude.ai/artifact/RJD7uBnzZuvDgX3AEkgUWS"
+  },
+  {
+    id: "aula-03", numero: 3, modulo: "Figma",
+    titulo: "Tipografia e cores no Figma",
+    resumo: "Fontes, tamanhos, paleta de cores e contraste.",
+    conteudo: "Tipografia é a escolha e organização das fontes. Use no máximo duas fontes: uma para títulos e outra para textos. Hierarquia: o título é maior e mais forte, o subtítulo médio e o texto menor. Peso (weight) é a grossura da letra: regular 400, negrito 700. Cores: monte uma paleta com uma cor principal, uma de destaque e as neutras (fundo e texto). Cores são escritas em hexadecimal, como #FF5733. Contraste é a diferença entre a cor do texto e a do fundo: texto escuro em fundo claro ou o contrário, para ser fácil de ler. No Figma, salve as cores e os estilos de texto para reutilizar. Essas escolhas viram depois color, font-family e font-size no CSS.",
+    youtube: "https://www.youtube.com/watch?v=tvrOiIFK6rQ", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/F6VkhaHuhscTbSx527aen1"
+  },
+  {
+    id: "aula-04", numero: 4, modulo: "HTML",
+    titulo: "Estrutura do HTML",
+    resumo: "Esqueleto da página, títulos, parágrafos e o VS Code com Live Server.",
+    conteudo: "HTML é a linguagem que dá a estrutura da página. Tudo é feito com tags, que abrem e fecham: <p> e </p>. O esqueleto: <!DOCTYPE html>, <html lang=\"pt-BR\">, <head> (informações: meta charset UTF-8, meta viewport e title) e <body> (o que aparece na tela). No VS Code, digite ! e aperte Enter para gerar o esqueleto. Títulos vão de h1 (o mais importante, um por página) até h6. <p> é parágrafo, <strong> deixa em negrito com importância, <em> dá ênfase (itálico), <br> quebra a linha e <hr> faz uma linha horizontal. Comentário: <!-- texto -->, não aparece na tela. O primeiro arquivo se chama index.html. A extensão Live Server abre a página no navegador e atualiza sozinha quando salvamos (botão Go Live ou clique direito > Open with Live Server). Salve sempre com Ctrl + S.",
+    youtube: "https://www.youtube.com/watch?v=2bv_ubY1ovw", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/M6qNzDQQReF8T72NKKGfp3"
+  },
+  {
+    id: "aula-05", numero: 5, modulo: "HTML",
+    titulo: "Links, imagens e listas",
+    resumo: "a href, img src alt, ul, ol, li e caminhos relativos.",
+    conteudo: "Link: <a href=\"sobre.html\">Sobre</a>. O href é o endereço. Para abrir em outra aba, use target=\"_blank\". Link externo começa com https://. Imagem: <img src=\"imagens/foto.jpg\" alt=\"descrição da foto\">. A tag img não fecha. O src é o caminho do arquivo e o alt é o texto que descreve a imagem (para leitores de tela e quando a imagem não carrega). Listas: <ul> é lista sem número (com bolinhas), <ol> é lista numerada, e cada item é <li>. Caminho relativo parte do arquivo atual: imagens/foto.jpg entra na pasta imagens; ../index.html volta uma pasta. Erros comuns: nome do arquivo diferente (maiúscula, acento, espaço), extensão errada (.jpeg x .jpg) e pasta errada. Dica: use nomes de arquivo sem espaço e sem acento.",
+    youtube: "https://www.youtube.com/watch?v=DAIB4mTPSHg", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/TxMHqssWefh65qN8JE9x3n"
+  },
+  {
+    id: "aula-06", numero: 6, modulo: "HTML",
+    titulo: "HTML semântico",
+    resumo: "header, nav, main, section, article, aside e footer.",
+    conteudo: "Semântica é usar a tag que diz o que o conteúdo é. Em vez de várias div, usamos: <header> (topo, com logo e menu), <nav> (menu de navegação, com links), <main> (o conteúdo principal, um por página), <section> (uma seção com assunto próprio, normalmente com um título), <article> (conteúdo que faz sentido sozinho, como um post ou card), <aside> (conteúdo lateral, complementar) e <footer> (rodapé, com contato e direitos). Vantagens: o código fica organizado, o Google entende melhor a página e leitores de tela ajudam quem tem deficiência visual. O portfólio passa a ter 3 páginas (index.html, sobre.html e projetos.html) com o mesmo header e nav, para navegar entre elas.",
+    youtube: ["https://www.youtube.com/watch?v=A0aOmQC6WUQ", "https://www.youtube.com/watch?v=HfrQFx7FVDg", "https://www.youtube.com/watch?v=1eMdKEoDL2I"], video: "", pdf: "",
+    slides: "https://claude.ai/artifact/VxNPn5bZqDc2Yxu2QHZEZB"
+  },
+  {
+    id: "aula-07", numero: 7, modulo: "HTML",
+    titulo: "Navegação e formulários",
+    resumo: "Menu com links entre páginas e primeiro formulário.",
+    conteudo: "O menu fica dentro do <nav>, normalmente uma lista <ul> com <li> e um <a> em cada item, apontando para as páginas do site: index.html, sobre.html, projetos.html e contato.html. Copie o mesmo header em todas as páginas. Formulário: <form> agrupa os campos. <label for=\"nome\">Nome</label> é o texto do campo e o for liga ao id do input. <input type=\"text\" id=\"nome\" name=\"nome\">. Tipos de input: text, email, tel, password, number, date. placeholder é a dica dentro do campo. required torna o campo obrigatório. <textarea> é para mensagem longa. <button type=\"submit\">Enviar</button> envia o formulário. A página nova é contato.html. Na aula, a página Sobre mim vira um site de 4 páginas: o menu fica no nav, dentro do header; links internos usam só o nome do arquivo, sem https; duplicamos o sobre.html para criar index.html, projetos.html e contato.html, trocando só o title e o main de cada uma; cada projeto fica dentro de um article. No formulário: type=\"email\" faz o navegador conferir se tem @.",
+    youtube: "https://www.youtube.com/watch?v=MCHiCbOoiIo", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/Nc79ZEVGLz2DYWm8uMtKac"
+  },
+  {
+    id: "aula-08", numero: 8, modulo: "HTML",
+    titulo: "Formulários completos",
+    resumo: "select, radio, checkbox, required e organização do formulário.",
+    conteudo: "Campos de escolha: <select> com <option> faz uma lista suspensa. type=\"radio\" deixa escolher só uma opção; todos os radios do grupo precisam do mesmo name. type=\"checkbox\" deixa marcar várias. <fieldset> agrupa campos parecidos e <legend> dá o título do grupo. Atributos úteis: required (obrigatório), placeholder (dica), minlength e maxlength (tamanho do texto), min e max (números), value (valor enviado). O label com for igual ao id do input faz o clique no texto selecionar o campo. O type=\"email\" já confere se tem @. Erros comuns: for e id diferentes, input sem name, botão fora do form.",
+    youtube: "https://www.youtube.com/watch?v=M1ZXmB4RJgE", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/LAcxbFUygnJaHgQwRmdfxc"
+  },
+  {
+    id: "aula-09", numero: 9, modulo: "HTML",
+    titulo: "Tabelas",
+    resumo: "table, tr, th, td, thead, tbody e caption.",
+    conteudo: "Tabela organiza dados em linhas e colunas. <table> abre a tabela. <tr> é uma linha (table row). <th> é célula de cabeçalho (fica em negrito e centralizada). <td> é célula de dado. <thead> agrupa o cabeçalho, <tbody> o corpo e <tfoot> o rodapé. <caption> é o título da tabela. colspan=\"2\" faz uma célula ocupar duas colunas e rowspan=\"2\" ocupar duas linhas. Exemplo de projeto: receita de churrasco em 5 passos com tabela de ingredientes e quantidades. Tabela é para dados, não para montar o layout da página.",
+    youtube: "https://www.youtube.com/watch?v=OT5muOmIgCg", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/5E58jrfnq4VRKt7LbFa3mE"
+  },
+  {
+    id: "extra-revisao-html", numero: 0, modulo: "HTML",
+    titulo: "Revisão de HTML (aulas 03 a 09)",
+    resumo: "A página sobre.html montada inteira, do arquivo vazio até o rodapé.",
+    conteudo: "Revisão do HTML das aulas 03 a 09, montando a página sobre.html do portfólio do zero no VS Code. Esqueleto com ! + Enter: DOCTYPE, html lang pt-BR, head com meta charset, meta viewport e title, e body. Estrutura semântica: header com o nome e o nav (menu com ul, li e a href para index.html, sobre.html, projetos.html e contato.html), main com as seções, e footer no rodapé. Conteúdo: h1 único na página, h2 para cada seção, p para os textos, strong e em para destaque, img com src e alt (caminho relativo imagens/foto.jpg), listas ul e ol com li, link externo com target=\"_blank\". Tabela com table, thead, tbody, tr, th e td. Formulário com form, label for ligado ao id do input, input com type, name, placeholder e required, textarea e button type submit. Abrir com o Live Server e salvar sempre com Ctrl + S. Erros comuns: tag sem fechar, nome de arquivo ou pasta diferente, alt faltando, for e id diferentes.",
+    youtube: "https://www.youtube.com/watch?v=krgKIvIyptA", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/31yevYEoKBwz7ejGZoJdZy"
+  },
+  {
+    id: "aula-10", numero: 10, modulo: "CSS",
+    titulo: "CSS: cores e fontes",
+    resumo: "Ligar o CSS, seletores, cores, fontes e :hover.",
+    conteudo: "CSS é a linguagem que dá o visual: cores, tamanhos, espaços e posição. Crie a pasta css com o arquivo style.css e ligue no head: <link rel=\"stylesheet\" href=\"css/style.css\">. Regra CSS: seletor { propriedade: valor; }. Seletores: de tag (p), de classe (.card, usado com class=\"card\" no HTML) e de id (#topo, usado com id=\"topo\"). Classe pode repetir na página; id é único. Propriedades: color (cor do texto), background-color (fundo), font-family (fonte), font-size (tamanho, em px ou rem), font-weight (peso), text-align (alinhamento). Google Fonts: copie o <link> da fonte para o head e use o nome no font-family. :hover muda o estilo quando o mouse passa por cima, por exemplo a:hover { color: red; }. Erros comuns: esquecer ponto e vírgula, chave sem fechar, caminho do link errado, rel escrito errado.",
+    youtube: "https://www.youtube.com/watch?v=XCXA12QcNe0", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/5VBaW9k61HC7aS9y66eHJp"
+  },
+  {
+    id: "aula-11", numero: 11, modulo: "CSS",
+    titulo: "Box model e cards",
+    resumo: "content, padding, border, margin e box-sizing.",
+    conteudo: "Todo elemento é uma caixa. Box model, de dentro para fora: content (conteúdo), padding (espaço interno, entre o conteúdo e a borda), border (borda) e margin (espaço externo, entre a caixa e as outras). Exemplo: padding: 20px; border: 2px solid #333; margin: 16px. border-radius arredonda os cantos. box-shadow faz sombra. width e max-width definem a largura. box-sizing: border-box faz o padding e a borda ficarem dentro da largura, e costuma ir no começo do CSS: * { box-sizing: border-box; }. margin: 0 auto centraliza um bloco com largura definida. Card: uma caixa com imagem, título, texto e botão, feita com padding, borda, border-radius e sombra. No DevTools (F12) dá para ver o box model de cada elemento.",
+    youtube: "https://www.youtube.com/watch?v=rNCEumXk3Lc", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/GAFahy7m6qhHY4CM1RxRDK"
+  },
+  {
+    id: "aula-12", numero: 12, modulo: "CSS",
+    titulo: "Flexbox",
+    resumo: "display flex, justify-content, align-items, gap e flex-wrap.",
+    conteudo: "Flexbox organiza itens em linha ou coluna. Coloque display: flex no pai (o container) e os filhos se alinham. flex-direction: row (linha, padrão) ou column (coluna). justify-content alinha no eixo principal: flex-start, center, flex-end, space-between, space-around. align-items alinha no outro eixo: flex-start, center, flex-end, stretch. gap: 20px coloca espaço entre os itens. flex-wrap: wrap deixa os itens descerem para a linha de baixo quando não cabem. flex: 1 faz o item crescer e ocupar o espaço. Para centralizar no meio da tela, use no pai: display: flex; justify-content: center; align-items: center. Uso comum: menu no header (logo de um lado, links do outro com space-between) e cards lado a lado. Na aula, o sobre.html ganha Flexbox: o header vira uma faixa escura no topo com o nome de um lado e o menu do outro (display: flex no header, justify-content e align-items para alinhar, gap para separar os itens do menu), e a lista O que curto, com class=\"gostos\" e flex-wrap, vira etiquetas laranja. Lembre: o display: flex vai no PAI; quem se mexe são os filhos. Para treinar: o jogo Flexbox Froggy.",
+    youtube: "https://www.youtube.com/watch?v=gGWCZGhRLI0", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/NKtikZCGGLYmBB6WAjDPHC"
+  },
+  {
+    id: "aula-13", numero: 13, modulo: "CSS",
+    titulo: "Site no celular e no ar",
+    resumo: "Responsividade, viewport, @media e publicação no GitHub Pages.",
+    conteudo: "Site responsivo se adapta à tela: celular, tablet e computador. No head precisa da meta viewport: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">. Media query muda o CSS em telas menores: @media (max-width: 768px) { .cards { flex-direction: column; } }. Use max-width: 100% nas imagens para não estourarem. No DevTools (F12), o ícone de celular simula telas. Publicar: crie um repositório no GitHub, envie os arquivos e ative em Settings > Pages, branch main. O arquivo principal precisa se chamar index.html. O endereço fica usuario.github.io/repositorio. A atualização pode levar alguns minutos.",
+    youtube: "https://www.youtube.com/watch?v=tee_8N0-CoQ", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/6q5ET2bknWevEu7gyAXE16"
+  },
+  {
+    id: "aula-14", numero: 14, modulo: "CSS",
+    titulo: "CSS extra",
+    resumo: "transition, transform, variáveis CSS e acabamento.",
+    conteudo: "Acabamento visual. Variáveis CSS guardam valores para reutilizar: :root { --cor-principal: #6C3BFF; } e depois color: var(--cor-principal). Mudou a variável, muda o site inteiro. transition deixa a mudança suave: transition: 0.3s. transform muda forma e posição: transform: scale(1.05) aumenta, translateY(-5px) sobe, rotate(10deg) gira. Juntos com :hover fazem efeitos em botões e cards. cursor: pointer mostra a mãozinha. text-decoration: none tira o sublinhado dos links. opacity muda a transparência. Use com moderação: efeitos rápidos e discretos.",
+    youtube: "https://www.youtube.com/watch?v=ZvziZ7ol4UE", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/ATSdLv27pz3hNUt5k6PLmg"
+  },
+  {
+    id: "aula-15", numero: 15, modulo: "Git e GitHub",
+    titulo: "Revisão e GitHub",
+    resumo: "Revisão de HTML e CSS, git e os comandos para subir o projeto.",
+    conteudo: "Git guarda o histórico do projeto no computador; GitHub guarda o projeto na internet. Primeira vez: git config --global user.name \"Seu Nome\" e git config --global user.email \"seu@email\". Subir um projeto novo, no terminal do VS Code, dentro da pasta: git init (começa o controle), git add . (prepara todos os arquivos), git commit -m \"mensagem\" (salva uma versão), git branch -M main, git remote add origin https://github.com/usuario/repositorio.git (liga ao repositório) e git push -u origin main (envia). Depois, para atualizar: git add ., git commit -m \"mensagem\", git push. Erros comuns: remote sem o nome do repositório (corrija com git remote set-url origin ENDEREÇO-CERTO), esquecer o commit, estar na pasta errada. git status mostra o que mudou.",
+    youtube: "https://www.youtube.com/watch?v=nWd68Ja7dCU", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/Y8bedXJtVWZXrv4ZsQttT8"
+  },
+  {
+    id: "aula-16", numero: 16, modulo: "JavaScript",
+    titulo: "Primeiro JavaScript",
+    resumo: "script, console.log, variáveis, querySelector e evento de clique.",
+    conteudo: "JavaScript dá comportamento à página: responde a cliques, muda textos e cores. Crie js/script.js e ligue no fim do body: <script src=\"js/script.js\"></script>. console.log(\"Olá\") mostra uma mensagem no Console (F12). Variáveis: const (não muda) e let (pode mudar). Tipos: texto (string, entre aspas), número e booleano (true ou false). Pegar um elemento do HTML: const botao = document.querySelector(\"#botao\"); use # para id e . para classe. Evento: botao.addEventListener(\"click\", () => { ... }); executa o código quando clica. Mudar texto: titulo.textContent = \"Novo texto\". Na aula, o portfólio ganha a saudação pela hora: new Date().getHours() pega a hora, e um if/else escolhe Bom dia, Boa tarde ou Boa noite para escrever no título. Também criamos o botão de modo escuro com addEventListener e classList.toggle. Erros comuns: esquecer o # no seletor, id diferente do HTML, script no lugar errado, textcontent com letra minúscula (o certo é textContent).",
+    youtube: "https://www.youtube.com/watch?v=6AGUoIKmxo8", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/3Mip1bBCfrvdJdYLu1RP2w"
+  },
+  {
+    id: "aula-17", numero: 17, modulo: "JavaScript",
+    titulo: "Modo escuro e formulário",
+    resumo: "classList.toggle, if/else e eventos.",
+    conteudo: "Modo escuro: crie no CSS uma classe .escuro com outras cores (body.escuro { background: #111; color: #fff; }). No JS, ao clicar no botão: document.body.classList.toggle(\"escuro\"). toggle coloca a classe se não tem e tira se tem. classList.add coloca, classList.remove tira e classList.contains pergunta se tem (true ou false). if/else decide: if (condição) { ... } else { ... }. Comparações: === igual, !== diferente, > maior, < menor. Exemplo: mudar o texto do botão para Modo claro ou Modo escuro conforme a classe. O mesmo raciocínio vale para o exercício da lâmpada.",
+    youtube: "https://www.youtube.com/watch?v=ZnZXEBzjd78", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/1k3vCKc7BAKC7dTNjaV9Ei"
+  },
+  {
+    id: "aula-18", numero: 18, modulo: "JavaScript",
+    titulo: "Formulário com JavaScript",
+    resumo: "submit, preventDefault, value e validação.",
+    conteudo: "Pegar o formulário: const form = document.querySelector(\"#form\"). Evento de envio: form.addEventListener(\"submit\", (evento) => { evento.preventDefault(); ... }). preventDefault impede a página de recarregar. Ler o que foi digitado: input.value. trim() tira espaços do começo e do fim. Validar: if (nome.value === \"\") { mensagem.textContent = \"Preencha o nome\"; }. Mostrar resposta: um <p id=\"mensagem\"> que recebe o texto. Mudar a cor da mensagem com classList ou style.color. Limpar o formulário: form.reset(). Na aula, o formulário de contato do portfólio ganha JavaScript: no contato.html, um id no form, um parágrafo vazio para a resposta e o arquivo js/contato.js. Ao enviar, a página não recarrega e mostra uma resposta com o nome da pessoa (textContent). Se a mensagem tiver menos de 10 letras (mensagem.value.trim().length < 10), aparece um aviso em vermelho com classList.add(\"erro\") e a classe .erro no CSS. Quando dá certo, os campos são limpos com formulario.reset(). Number(input.value) transforma o texto do input em número, porque o value sempre vem como texto.",
+    youtube: "https://www.youtube.com/watch?v=WLYtg0w8_Sg", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/6pLZkCTZ3ErhwaueQeAwpk"
+  },
+  {
+    id: "aula-19", numero: 19, modulo: "JavaScript",
+    titulo: "Arrays e for",
+    resumo: "Listas com colchetes, length, push e laço for.",
+    conteudo: "Array é uma lista: const frutas = [\"maçã\", \"banana\", \"uva\"]. Cada item tem uma posição (índice) que começa no 0: frutas[0] é maçã. frutas.length diz quantos itens tem. frutas.push(\"manga\") coloca no final. O laço for repete código: for (let i = 0; i < frutas.length; i++) { console.log(frutas[i]); }. Também existe for (const fruta of frutas) { ... }, que passa item por item. Uso na página: montar uma lista <ul> com um <li> para cada item usando innerHTML += `<li>${fruta}</li>`. Na aula, a lista \"O que curto\" da página Sobre passa a ser criada pelo JavaScript: const gostos = [\"Academia\", \"Música\", \"Churrasco\", \"Futebol\", \"Praia\"]; a lista fica vazia no HTML, só com id=\"gostos\"; para cada gosto (for const gosto of gostos), criamos um item com document.createElement(\"li\"), escrevemos o texto com textContent e colocamos na página com appendChild. No Console, gostos.length mostra quantos itens tem e gostos[0] mostra o primeiro. Erros comuns: começar a contar do 1, usar <= length (passa do último item), esquecer as aspas nos textos.",
+    youtube: "https://www.youtube.com/watch?v=i-tncNpMB8E", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/BfAYcUNPjkzDKFYJWXvyBw"
+  },
+  {
+    id: "aula-20", numero: 20, modulo: "JavaScript",
+    titulo: "Funções e objetos",
+    resumo: "function, parâmetros, return e objetos com chave e valor.",
+    conteudo: "Função é um bloco de código com nome que pode ser usado várias vezes: function somar(a, b) { return a + b; }. a e b são parâmetros; quando chamamos somar(2, 3), 2 e 3 são os argumentos. return devolve o resultado. Objeto agrupa informações com chave e valor: const aluno = { nome: \"Ana\", idade: 20, curso: \"Web\" }. Ler: aluno.nome. Mudar: aluno.idade = 21. Array de objetos é uma lista de fichas: const projetos = [{ titulo: \"Portfólio\" }, { titulo: \"Receitas\" }]; projetos[0].titulo. É assim que os dados de um site costumam ser organizados, e é o formato do JSON. Na aula, os cards da página Projetos passam a ser montados pelo JavaScript: a div fica vazia no HTML, só com id=\"lista-projetos\"; a função criarCard(projeto) cria uma section com h2 e p (document.createElement), usa classList.add(\"card\") para pegar o estilo do CSS e coloca o card na lista; um for chama criarCard para cada projeto. Projeto novo é só mais um objeto no array. Erros comuns: nenhum card aparece (esqueceu de chamar criarCard dentro do for); aparece undefined (nome da propriedade diferente, como titulo e título); card sem estilo (faltou o classList.add(\"card\")); cards em dobro (sobrou card escrito à mão no HTML).",
+    youtube: "https://www.youtube.com/watch?v=3mOC-LiRCY0", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/5BHCVENdwfTfR81Ui9TY8i"
+  },
+  {
+    id: "aula-21", numero: 21, modulo: "JavaScript",
+    titulo: "JSON e fetch",
+    resumo: "Arquivo .json, fetch, then e cards gerados pelo JavaScript.",
+    conteudo: "JSON é um formato de texto para guardar dados, parecido com objeto JavaScript, mas as chaves vão entre aspas duplas e não tem comentários nem vírgula sobrando no último item. Exemplo: projetos.json com [ { \"titulo\": \"Portfólio\", \"descricao\": \"Meu site\" } ]. fetch busca o arquivo: fetch(\"projetos.json\").then((resposta) => resposta.json()).then((projetos) => { ... }). O primeiro then transforma a resposta em dados; o segundo usa os dados. Dentro, um for monta um card para cada projeto com innerHTML e template string. O fetch só funciona com o Live Server (não abrindo o arquivo direto). Erros comuns: nome do arquivo diferente (projeto.json x projetos.json), vírgula no último item, aspas simples no JSON.",
+    youtube: "https://www.youtube.com/watch?v=Kbb3T0qtOyE", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/1ogA2b48sB9AHHRYzbVW4m"
+  },
+  {
+    id: "aula-22", numero: 22, modulo: "JavaScript",
+    titulo: "Revisão de JavaScript e GitHub",
+    resumo: "Revisão de querySelector, eventos, arrays, objetos, fetch e git.",
+    conteudo: "Revisão do JavaScript até aqui: ligar o script no fim do body; const e let; document.querySelector com # para id e . para classe; addEventListener(\"click\", ...); textContent para trocar texto; classList.toggle para ligar e desligar classes; arrays com colchetes e objetos com chaves; for para repetir; fetch para ler o JSON e montar cards. Revisão do GitHub: git add ., git commit -m \"mensagem\" e git push para atualizar o repositório, e o GitHub Pages para deixar o portfólio no ar. Checklist de erro: abra o Console (F12) e leia a mensagem vermelha; confira nomes de id, de arquivo e de pasta; salve tudo com Ctrl + S.",
+    youtube: "https://www.youtube.com/watch?v=_aYIiaLZhkI", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/WKs6NXeaBRV6DvDdPcqFvs"
+  },
+  {
+    id: "aula-23", numero: 23, modulo: "JavaScript",
+    titulo: "Arrow function e template string",
+    resumo: "Funções com => e textos com crase e ${ }.",
+    conteudo: "Arrow function é um jeito curto de escrever função: const somar = (a, b) => { return a + b; }. Com uma linha só, o return fica implícito: const somar = (a, b) => a + b. Com um parâmetro, os parênteses são opcionais: const dobro = n => n * 2. Usamos muito em eventos: botao.addEventListener(\"click\", () => { ... }). Template string usa crase (`) em vez de aspas e deixa colocar variáveis dentro com ${ }: `Olá, ${nome}! Você tem ${idade} anos.`. Também aceita várias linhas, ótimo para montar HTML: `<h2>${projeto.titulo}</h2>`. Erro comum: usar apóstrofo (') em vez de crase; aí o ${ } aparece escrito na tela. A crase fica na tecla ao lado do P (ou do 1) e às vezes precisa apertar espaço depois.",
+    youtube: "https://www.youtube.com/watch?v=KCkZQ1qBct8", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/PF9W2KTAPYbEJK6WR9QuVi"
+  },
+  {
+    id: "aula-24", numero: 24, modulo: "JavaScript",
+    titulo: "map e filter",
+    resumo: "Transformar e filtrar listas sem for.",
+    conteudo: "map transforma cada item de um array e devolve um array novo do mesmo tamanho: const dobros = numeros.map((n) => n * 2). Muito usado para montar HTML: projetos.map((p) => `<h2>${p.titulo}</h2>`).join(\"\"). O join(\"\") junta tudo em um texto só, sem vírgulas. filter escolhe os itens que passam num teste (true) e devolve um array novo, que pode ser menor: const caros = produtos.filter((p) => p.preco > 50). Os dois não mudam o array original. Exemplo da aula: botões de filtro por categoria que mostram só os cards escolhidos. Erros comuns: esquecer o return quando usa chaves, esquecer o join e aparecer vírgula na tela, id do botão diferente do HTML (filtro- x filtros-).",
+    youtube: "https://www.youtube.com/watch?v=y7r2Z7B2W4A", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/FSpXTFiQbDW5PfDS6of36M"
+  },
+  {
+    id: "aula-25", numero: 25, modulo: "JavaScript",
+    titulo: "Revisão da semana",
+    resumo: "Arrow function, template string, map, filter e exercícios.",
+    conteudo: "Revisão da semana: arrow function (const nome = (parâmetros) => resultado), template string com crase e ${ }, map para transformar listas e montar HTML, filter para escolher itens, join(\"\") para juntar o HTML. Exercícios com cards a partir de um array de objetos: mostrar todos com map, filtrar por categoria com filter, contar com length (`${lista.length} projetos`). Também revisamos a lâmpada (let ligada = false; ligada = !ligada; classList.toggle) e a calculadora (Number(n1.value) + Number(n2.value), e o if para não dividir por zero).",
+    youtube: "https://www.youtube.com/watch?v=L_S0T-sn7Yc", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/VFsNZ3W1jS2jjdGbV6bCBa"
+  },
+  {
+    id: "aula-26", numero: 26, modulo: "React",
+    titulo: "Primeiro passo no React",
+    resumo: "React pelo CDN, componente, JSX, props, map e key.",
+    conteudo: "React é uma biblioteca JavaScript, criada pelo Facebook (Meta), para montar telas com componentes: peças reutilizáveis, como Lego. Na aula usamos o React pelo CDN, sem instalar nada. Crie o arquivo react.html com o esqueleto (! + Enter) e, no body, <div id=\"raiz\"></div>. Antes de fechar o body, 4 scripts, nesta ordem: <script src=\"https://unpkg.com/react@18.3.1/umd/react.development.js\"></script> (o React, que cria componentes); <script src=\"https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js\"></script> (o ReactDOM, que desenha na página); <script src=\"https://unpkg.com/@babel/standalone@7.24.7/babel.min.js\"></script> (o Babel, tradutor do JSX); e <script type=\"text/babel\" src=\"js/app.js\"></script> (o nosso código). unpkg.com é o site que guarda as bibliotecas; react é o nome, @18.3.1 a versão e umd/react.development.js o arquivo. Usamos a 18.3.1 porque a 19 não tem mais esse arquivo pronto para script. Os 3 primeiros scripts não mostram nada: são a cozinha; o app.js é a receita. No js/app.js: um array projetos com objetos { titulo, descricao }; o componente Card recebe props e devolve <section className=\"card\"><h2>{props.titulo}</h2><p>{props.descricao}</p></section>; o componente App devolve um <main> com h1, {projetos.length} projetos e projetos.map((projeto) => <Card key={projeto.titulo} titulo={projeto.titulo} descricao={projeto.descricao} />). No fim: const raiz = ReactDOM.createRoot(document.querySelector(\"#raiz\")); raiz.render(<App />);. Regras do JSX: um elemento pai por return; className em vez de class; { } para usar JavaScript; tags sem par fecham com />; nome de componente com letra maiúscula. key ajuda o React a identificar cada item da lista. Nesta aula não usamos JSON: os dados estão no próprio app.js. Teste no Console: React.version deve mostrar \"18.3.1\"; se aparecer React is not defined, faltou um script. Precisa abrir com o Live Server e ter internet.",
+    youtube: "https://www.youtube.com/watch?v=7r5wIa_ypwQ", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/MGYdMyzCmZyuMr7HPpQexS"
+  },
+
+  // ---------------- EXTRAS ----------------
+  {
+    id: "extra-lampada", numero: 0, modulo: "Exercícios",
+    titulo: "Exercício da lâmpada",
+    resumo: "Liga e desliga com let, ! e classList.toggle.",
+    conteudo: "Projeto: pasta projeto_lampada com lampada.html, css/lampada.css e js/lampada.js. No HTML: a lâmpada (um elemento com id lampada), um <p id=\"status\"> e um <button id=\"botao\">. No CSS, a classe .apagada deixa a lâmpada cinza; sem ela, fica amarela e acesa. No JS: const lampada, status e botao com querySelector; let ligada = false (começa apagada; é let porque vai mudar). No clique: ligada = !ligada (o ! inverte: true vira false e false vira true); lampada.classList.toggle(\"apagada\"); e um if (ligada) { status.textContent = \"Status: ligada\"; botao.textContent = \"Desligar\"; } else { status.textContent = \"Status: desligada\"; botao.textContent = \"Ligar\"; }. Erros comuns: esquecer o # no querySelector, id diferente, a classe começar errada no HTML, script fora do lugar.",
+    youtube: "https://www.youtube.com/watch?v=MM0gZRTiHdg", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/QKbDnW7DjGoef3zaPWW9Xs"
+  },
+  {
+    id: "extra-calculadora", numero: 0, modulo: "Exercícios",
+    titulo: "Exercício da calculadora",
+    resumo: "Dois inputs, quatro botões, Number e o if da divisão.",
+    conteudo: "Projeto: pasta projeto_calculadora com calculadora.html, css/calculadora.css e js/calculadora.js. No HTML: <input type=\"number\" id=\"n1\">, <input type=\"number\" id=\"n2\">, quatro botões (id somar, subtrair, multiplicar e dividir) e <p id=\"resultado\">. No JS: um const para cada elemento com querySelector e uma função mostrar = (conta) => resultado.textContent = `Resultado: ${conta}`. Cada botão tem um addEventListener(\"click\", ...) que chama mostrar(Number(n1.value) + Number(n2.value)), trocando o sinal (-, *, /). Number é obrigatório porque o value vem como texto: sem ele, 2 + 3 vira \"23\". Na divisão: if (Number(n2.value) === 0) { resultado.textContent = \"Não dá para dividir por zero\"; } else { mostrar(...) }. Erros comuns: id do botão diferente (soma x somar), apóstrofo no lugar da crase, parêntese fechando antes da hora, faltar o }); no fim do evento, listener repetido.",
+    youtube: "", video: "videos/extra-calculadora.mp4", pdf: "",
+    slides: "https://claude.ai/artifact/Qqx6hHsvc6x6DSnWSMevyi"
+  },
+  {
+    id: "extra-revisao-geral", numero: 0, modulo: "Exercícios",
+    titulo: "Revisão geral: HTML, CSS, JS e GitHub",
+    resumo: "Tudo junto, do esqueleto ao git push.",
+    conteudo: "Revisão do curso: HTML dá a estrutura (esqueleto, títulos, links, imagens, listas, semântica, formulários e tabelas). CSS dá o visual (link no head, seletores de tag, classe e id, cores, fontes, box model, flexbox, responsividade com @media). JavaScript dá o comportamento (script no fim do body, querySelector, addEventListener, textContent, classList, arrays, objetos, funções, fetch, map e filter). GitHub guarda e publica (git add ., git commit -m, git push e GitHub Pages). Organização de pastas: index.html na raiz, css/style.css, js/script.js e imagens/. Quando der erro: F12, Console, ler a mensagem, conferir nomes e salvar.",
+    youtube: "https://www.youtube.com/watch?v=JZqw54VyEZ8", video: "", pdf: "",
+    slides: "https://claude.ai/artifact/NhqcaYdRGFnr5xwKr6T7eE"
+  }
+];

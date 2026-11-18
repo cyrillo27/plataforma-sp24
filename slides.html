@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todos os slides — Plataforma SP24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="container topo-linha">
+      <a href="index.html" class="logo">&lt;SP24/&gt;</a>
+      <a href="index.html" class="voltar">← Todas as aulas</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="cabeca-aula">
+      <p class="eyebrow">Do Figma ao React</p>
+      <h1>Todos os slides</h1>
+      <p class="sub">Escolha a aula na lista para abrir os slides.</p>
+    </section>
+
+    <div class="leitor">
+      <nav class="lista-slides" id="lista"></nav>
+      <section class="palco">
+        <div class="palco-topo">
+          <h2 id="titulo-slide">Carregando…</h2>
+          <div class="botoes" id="botoes"></div>
+        </div>
+        <div id="visor"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape"><div class="container">Turma SP24 · Prof. Leandro</div></footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/aulas.js"></script>
+  <script src="js/slides.js"></script>
+</body>
+</html>

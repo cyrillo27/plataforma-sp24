@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma SP24 — Aulas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="container topo-linha">
+      <a href="index.html" class="logo">&lt;SP24/&gt;</a>
+      <a href="slides.html" class="link-slides">Todos os slides</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Desenvolvimento web · do Figma ao React</p>
+      <h1>Todas as aulas em um lugar</h1>
+      <p class="sub">Assista aos vídeos, abra os slides e tire dúvidas a qualquer hora.</p>
+      <p><a class="botao" href="slides.html">Ver todos os slides</a></p>
+      <input type="search" id="busca" class="busca" placeholder="Procurar aula ou assunto (ex.: flexbox, fetch, git push)">
+    </section>
+
+    <div id="modulos"></div>
+
+    <section class="bloco" id="duvidas-gerais">
+      <h2>Dúvida sobre qualquer aula</h2>
+      <div id="caixa-duvidas"></div>
+    </section>
+  </main>
+
+  <footer class="rodape"><div class="container">Turma SP24 · Prof. Leandro</div></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/aulas.js"></script>
+  <script src="js/duvidas.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
